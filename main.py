@@ -59,7 +59,7 @@ def run_flask():
     app.run(host='0.0.0.0', port=port)
 
 # --- 3. ИНИЦИАЛИЗАЦИЯ БОТА ---
-TOKEN = '8884771579:AAHyOVjQaJBRKpSPJALg2oVdwuRjBHQePEA'  # Ваш токен внутри кавычек
+TOKEN = os.getenv("TELEGRAM_TOKEN")  # Ну что бляди думали будет фри реклама а вот и нет уебаны
 bot = telebot.TeleBot(TOKEN)
 
 # Временное хранилище состояний создания конкурса
