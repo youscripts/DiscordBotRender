@@ -21,7 +21,7 @@ def run_flask():
     app.run(host='0.0.0.0', port=port)
 
 # 2. Инициализация Telegram-бота
-TOKEN = os.environ.get('BOT_TOKEN')
+TOKEN = os.environ.get('8884771579:AAHyOVjQaJBRKpSPJALg2oVdwuRjBHQePEA')
 
 if not TOKEN:
     logging.error("ОШИБКА: Переменная окружения BOT_TOKEN не найдена! Убедитесь, что вы добавили её в Render Dashboard -> Environment Variables.")
