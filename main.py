@@ -350,10 +350,12 @@ def check_contests_loop():
 
 # --- 9. ЗАПУСК ---
 if __name__ == "__main__":
-    # Запуск Flask сервера
-    threading.Thread(target=run_flask, daemon=True).start()
-    # Запуск фоновой проверки конкурсов
+    # 1. Запуск скрытой системы самопинга (Flask + генератор примеров)
+    keep_alive()
+    
+    # 2. Запуск вашего фонового потока проверки конкурсов
     threading.Thread(target=check_contests_loop, daemon=True).start()
     
-    logging.info("Бот для розыгрышей запущен!")
+    logging.info("Бот для розыгрышей успешно запущен!")
+    # 3. Старт поллинга Телеграм бота
     bot.infinity_polling(timeout=10, long_polling_timeout=5)
